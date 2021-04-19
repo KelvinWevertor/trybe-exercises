@@ -1,0 +1,19 @@
+div:hover{
+    border: solid 1px;
+}
+div.cor_primaria h3:hover{
+    color: blue;
+}
+div.cor_secundaria h3:hover{
+    color: aqua;
+}
+div.cor_complementar h3:hover{
+    color: green;
+    border: solid 10px;
+}
+div.cor_escura h3:hover{
+    color: red;
+}
+div.cor_clara h3:hover{
+    color: gray;
+}

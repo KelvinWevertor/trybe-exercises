@@ -1,0 +1,40 @@
+h1{
+    text-align: center;
+}
+
+.super-mario{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 1;
+    left: 100px;
+    top: 100px;  
+}
+.goomba{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 2;
+    left: 100px;
+    top: 600px;
+}
+.baloon{
+    position: absolute;
+    z-index: 3;
+    left: 600px;
+    top: 370px;
+}
+.word{
+    position: absolute;
+    z-index: 4;
+    left: 665px;
+    top: 425px;
+}
+.bowser{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 5;
+    left: 750px;
+    top: 570px;
+}
