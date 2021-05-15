@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2 id="page-title">Trybe</h2>
+    <p class="para" id="paragraph">Fundamentos do Desenvolvimento Web</p>
+    <h4 id="subtitle">JavaScript: DOM, Eventos e Web Storage</h4>
+    <p class="para" id="secund-paragraph">JavaScript - DOM e seletores</p>
+
+    <script>
+      const paragraphs = document.getElementsByClassName('para');
+
+      paragraphs[0].style.fontSize = '1.5rem';
+      paragraphs[0].style.color = 'green';
+
+      const subtitle = document.getElementsByTagName('h4')[0];
+      subtitle.style.color = 'blue';
+    </script>
+  </body>
+</html>
