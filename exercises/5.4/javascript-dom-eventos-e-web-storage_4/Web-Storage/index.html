@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trybe</title>
+  <style>
+  body {
+      margin: 10px;
+  }
+  .preferences {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      border: 1px solid green;
+  }
+  .options {
+      display: flex;
+      flex-direction: column;
+  }
+  .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .description {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+  }
+  .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 15px;
+  }
+  .paragraph {
+      display: flex;
+  }
+  </style>
+  <script>
+    window.onload = function() {
+      function setBackgroundColor(color) {
+        let content = document.querySelector(".content")
+        content.style.backgroundColor = color
+        localStorage.setItem("backgroundColor", color)
+      }
+
+      function setFontColor(color) {
+        let paragraphs = document.querySelectorAll(".paragraph")
+        for (let index = 0; index < paragraphs.length; index += 1) {
+          paragraphs[index].style.color = color
+        }
+        localStorage.setItem("fontColor", color)
+      }
+
+      function setFontSize(size) {
+        let paragraphs = document.querySelectorAll(".paragraph")
+        for (let index = 0; index < paragraphs.length; index += 1) {
+          paragraphs[index].style.fontSize = size
+        }
+        localStorage.setItem("fontSize", size)
+      }
+
+      function setLineHeight(height) {
+        let paragraphs = document.querySelectorAll(".paragraph")
+        for (let index = 0; index < paragraphs.length; index += 1) {
+          paragraphs[index].style.lineHeight = height
+        }
+        localStorage.setItem("lineHeight", height)
+      }
+
+      function setFontFamily(family) {
+        let paragraphs = document.querySelectorAll(".paragraph")
+        for (let index = 0; index < paragraphs.length; index += 1) {
+          paragraphs[index].style.fontFamily = family
+        }
+        localStorage.setItem("fontFamily", family)
+      }
+
+      // background-color
+      let backgroundColorButtons = document.querySelectorAll("#background-color>button")
+      for (let index = 0; index < backgroundColorButtons.length; index += 1) {
+        backgroundColorButtons[index].addEventListener("click", function(event) {
+          setBackgroundColor(event.target.innerHTML)
+        })
+      }
+
+      // font-color
+      let fontColorButtons = document.querySelectorAll("#font-color>button")
+      for (let index = 0; index < fontColorButtons.length; index += 1) {
+        fontColorButtons[index].addEventListener("click", function(event) {
+          setFontColor(event.target.innerHTML)
+        })
+      }
+
+      // font-size
+      let fontSizeButtons = document.querySelectorAll("#font-size>button")
+      for (let index = 0; index < fontSizeButtons.length; index += 1) {
+        fontSizeButtons[index].addEventListener("click", function(event) {
+          setFontSize(event.target.innerHTML)
+        })
+      }
+
+      // line-height
+      let lineHeightButtons = document.querySelectorAll("#line-height>button")
+      for (let index = 0; index < lineHeightButtons.length; index += 1) {
+        lineHeightButtons[index].addEventListener("click", function(event) {
+          setLineHeight(event.target.innerHTML)
+        })
+      }
+
+      // font-family
+      let fontFamilyButtons = document.querySelectorAll("#font-family>button")
+      for (let index = 0; index < fontFamilyButtons.length; index += 1) {
+        fontFamilyButtons[index].addEventListener("click", function(event) {
+          setFontFamily(event.target.innerHTML)
+        })
+      }
+
+      function initialize() {
+        let backgroundColor = localStorage.getItem("backgroundColor")
+        if (backgroundColor) setBackgroundColor(backgroundColor)
+
+        let fontColor = localStorage.getItem("fontColor")
+        if (fontColor) setFontColor(fontColor)
+
+        let fontSize = localStorage.getItem("fontSize")
+        if (fontSize) setFontSize(fontSize)
+
+        let lineHeight = localStorage.getItem("lineHeight")
+        if (lineHeight) setLineHeight(lineHeight)
+
+        let fontFamily = localStorage.getItem("fontFamily")
+        if (fontFamily) setFontSize(fontFamily)
+      }
+
+      initialize()
+    }
+  </script>
+</head>
+<body>
+  <section class="preferences">
+    <div id="background-color" class="options">
+      <span>Cor de fundo</span>
+      <button>white</button>
+      <button>black</button>
+      <button>green</button>
+      <button>blue</button>
+      <button>yellow</button>
+    </div>
+    <div id="font-color" class="options">
+      <span>Cor da fonte</span>
+      <button>black</button>
+      <button>red</button>
+      <button>white</button>
+    </div>
+    <div id="font-size" class="options">
+      <span>Tamanho da fonte</span>
+      <button>8pt</button>
+      <button>10pt</button>
+      <button>12pt</button>
+      <button>14pt</button>
+      <button>20pt</button>
+    </div>
+    <div id="line-height" class="options">
+      <span>Espaçamento entre as linhas</span>
+      <button>1</button>
+      <button>normal</button>
+      <button>1.5</button>
+      <button>2.0</button>
+      <button>3.0</button>
+    </div>
+    <div id="font-family" class="options">
+      <span>Tipo da fonte</span>
+      <button>Arial</button>
+      <button>Times New Roman</button>
+    </div>
+  </section>
+  <section class="title">
+    <h1>Trybe</h1>
+  </section>
+  <section class="description">
+    <h3>Trybe. Um novo curso para sua vida</h3>
+  </section>
+  <section class="content">
+    <p class="paragraph">
+      A escola que te ensina a programar, a aprender e a trabalhar. E você tem a opção de começar a pagar só quando já estiver trabalhando.
+    </p>
+    <p class="paragraph">
+      A Trybe é uma escola de desenvolvimento web que tem comprometimento genuíno com o sucesso profissional das pessoas estudantes. 
+    </p>
+    <p class="paragraph">
+      Com o Modelo de Sucesso Compartilhado, quem estuda na Trybe tem a opção de pagar apenas quando já estiver trabalhando. 
+    </p>
+    <p class="paragraph">
+      São mais de 1500 horas de formação, distribuídas entre estudo de conteúdo, aulas ao vivo, projetos individuais e em grupo e desenvolvimento de habilidades socioemocionais.
+    </p>
+    <p class="paragraph">
+      A escola investe todos os recursos necessários para que as pessoas aprendam as habilidades técnicas de uma pessoa desenvolvedora na prática, trabalhando em projetos de desafios reais, e evoluindo suas soft skills, além de oferecer conexão com o mercado de trabalho e ajudar na contratação.
+    </p>
+    <p class="paragraph">
+      Pague quando estiver trabalhando e recebendo uma remuneração mensal mínima. 
+    </p>
+    <p class="paragraph">
+      Inicie sua carreira de sucesso em desenvolvimento de software! Ensino De Qualidade. Metodologias Ágeis. Conteúdos Atualizados. Ensino Completo.
+    </p>
+    <p class="paragraph">
+      Participe do processo seletivo Inicie sua carreira em tecnologia
+    </p>
+    <p class="paragraph">
+      Veja o que você vai aprender Currículo alinhado com o mercado
+    </p>
+    <p class="paragraph">
+      Escola que se compromete integralmente com seu sucesso, onde você só paga quando conseguir um trabalho.
+    </p>
+  </section>
+</body>
+</html>
